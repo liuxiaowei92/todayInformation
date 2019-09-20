@@ -51,6 +51,7 @@ public class MainActivity extends BaseActivity implements IMainActivityContract.
     }
 
     private void initCheckListener() {
+        rbMainShanghai.setChecked(true);
         rgMainTop.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

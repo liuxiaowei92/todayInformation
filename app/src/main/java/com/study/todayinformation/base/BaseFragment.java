@@ -1,5 +1,6 @@
 package com.study.todayinformation.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +19,13 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment extends LifeCircleMvpFragment {
 
-//    //可以获取到Context
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//    }
+    //可以获取到Context
+    protected Context mContext;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.mContext=context;
+    }
 
     @Nullable
     @Override
