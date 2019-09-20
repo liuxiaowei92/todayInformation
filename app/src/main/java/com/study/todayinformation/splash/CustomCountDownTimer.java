@@ -1,4 +1,4 @@
-package com.study.todayinformation;
+package com.study.todayinformation.splash;
 
 
 import android.os.Handler;

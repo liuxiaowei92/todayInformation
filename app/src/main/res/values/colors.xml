@@ -6,4 +6,8 @@
 
     <color name="color_ffffff">#ffffff</color>
     <color name="color_black_70">#4D000000</color>
+    <color name="color_black_30">#b3000000</color>
+    <color name="color_black_40">#99000000</color>
+    <color name="color_ADADAD">#adadad</color>
+    <color name="color_FF7F1D">#FF7F1D</color>
 </resources>

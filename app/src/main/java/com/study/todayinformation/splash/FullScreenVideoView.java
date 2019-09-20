@@ -1,4 +1,4 @@
-package com.study.todayinformation.view;
+package com.study.todayinformation.splash;
 
 import android.content.Context;
 import android.util.AttributeSet;

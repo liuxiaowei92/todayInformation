@@ -11,4 +11,14 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="main_tab_rb_style">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/dp_2</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/selector_main_top_tab_textcolor</item>
+    </style>
+
 </resources>
