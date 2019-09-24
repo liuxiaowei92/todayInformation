@@ -1,8 +1,9 @@
 package com.study.todayinformation.splash;
 
-import com.study.todayinformation.mvp.ILifeCircle;
-import com.study.todayinformation.mvp.IMvpView;
-import com.study.todayinformation.mvp.MvpControler;
+
+import com.study.mvp.ILifeCircle;
+import com.study.mvp.IMvpView;
+import com.study.mvp.MvpControler;
 
 /**
  * @authour lxw

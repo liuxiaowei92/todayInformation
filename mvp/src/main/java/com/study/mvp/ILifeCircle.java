@@ -1,4 +1,4 @@
-package com.study.todayinformation.mvp;
+package com.study.mvp;
 
 import android.content.Intent;
 import android.os.Bundle;

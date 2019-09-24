@@ -5,7 +5,7 @@ import com.study.todayinformation.main.beijing.BeijingFragment;
 import com.study.todayinformation.main.hangzhou.HangzhouFragment;
 import com.study.todayinformation.main.shanghai.ShanghaiFragment;
 import com.study.todayinformation.main.shenzhen.ShenzhenFragment;
-import com.study.todayinformation.mvp.base.BaseMvpPresenter;
+import com.study.mvp.base.BaseMvpPresenter;
 
 import androidx.fragment.app.Fragment;
 

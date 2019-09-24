@@ -1,8 +1,8 @@
-package com.study.todayinformation.mvp.presenter;
+package com.study.mvp.presenter;
 
-import com.study.todayinformation.mvp.ILifeCircle;
-import com.study.todayinformation.mvp.IMvpView;
-import com.study.todayinformation.mvp.MvpControler;
+import com.study.mvp.ILifeCircle;
+import com.study.mvp.IMvpView;
+import com.study.mvp.MvpControler;
 
 import java.lang.ref.WeakReference;
 

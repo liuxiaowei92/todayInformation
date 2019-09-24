@@ -1,8 +1,9 @@
 package com.study.todayinformation.main;
 
-import com.study.todayinformation.mvp.ILifeCircle;
-import com.study.todayinformation.mvp.IMvpView;
-import com.study.todayinformation.mvp.MvpControler;
+
+import com.study.mvp.ILifeCircle;
+import com.study.mvp.IMvpView;
+import com.study.mvp.MvpControler;
 
 import androidx.fragment.app.Fragment;
 
@@ -13,7 +14,7 @@ import androidx.fragment.app.Fragment;
  */
 public interface IMainActivityContract {
 
-    interface Iview extends IMvpView{
+    interface Iview extends IMvpView {
 
         void showFragment(Fragment mFragment);
 
@@ -21,7 +22,7 @@ public interface IMainActivityContract {
 
         void hideFragment(Fragment mFragment);
     }
-    interface IPresenter extends ILifeCircle{
+    interface IPresenter extends ILifeCircle {
 
         void initHomeFragment();
 

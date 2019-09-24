@@ -1,10 +1,10 @@
-package com.study.todayinformation.mvp.base;
+package com.study.mvp.base;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.study.todayinformation.mvp.IMvpView;
-import com.study.todayinformation.mvp.presenter.LifeCircleMvpPresenter;
+import com.study.mvp.IMvpView;
+import com.study.mvp.presenter.LifeCircleMvpPresenter;
 
 /**
  * @authour lxw

@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.study.todayinformation.mvp.view.LifeCircleMvpFragment;
+import com.study.mvp.view.LifeCircleMvpFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

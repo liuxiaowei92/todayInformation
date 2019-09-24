@@ -2,7 +2,7 @@ package com.study.todayinformation.base;
 
 import android.os.Bundle;
 
-import com.study.todayinformation.mvp.view.LifeCircleMvpActivity;
+import com.study.mvp.view.LifeCircleMvpActivity;
 
 import androidx.annotation.Nullable;
 import butterknife.ButterKnife;

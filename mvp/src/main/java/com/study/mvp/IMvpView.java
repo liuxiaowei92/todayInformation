@@ -1,4 +1,4 @@
-package com.study.todayinformation.mvp;
+package com.study.mvp;
 
 /**
  * @authour lxw

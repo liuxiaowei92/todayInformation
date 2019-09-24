@@ -1,6 +1,6 @@
 package com.study.todayinformation.splash;
 
-import com.study.todayinformation.mvp.base.BaseMvpPresenter;
+import com.study.mvp.base.BaseMvpPresenter;
 
 /**
  * @authour lxw
