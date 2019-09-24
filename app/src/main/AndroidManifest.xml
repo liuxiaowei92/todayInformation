@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.MainActivity"/>
+        <activity android:name=".main.shanghai.view.ShanghaiDetailActivity"/>
     </application>
 
 </manifest>

@@ -46,7 +46,7 @@ public class ShanghaiFragment extends BaseFragment {
         for(int i=0;i<10;i++){
             datas.add("上海欢迎你"+i);
         }
-        mRecycleView.setAdapter(new ShanghaiElemAdapter(mContext, ShanghaiDataManager.getData(),false));
+        mRecycleView.setAdapter(new ShanghaiElemAdapter(getActivity(), ShanghaiDataManager.getData(),false));
     }
 
     private void initListener() {

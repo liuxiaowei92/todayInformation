@@ -1,16 +1,16 @@
 package com.study.todayinformation.main.shanghai.adapter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.study.todayinformation.R;
 import com.study.todayinformation.main.shanghai.dto.ShanghaiBean;
+import com.study.todayinformation.main.shanghai.view.ShanghaiDetailActivity;
 
 import java.util.ArrayList;
 
@@ -27,10 +27,10 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
 
     private final ArrayList<ShanghaiBean> mData;
     private final boolean mIsHor;
-    private Context mContext;
+    private Activity mContext;
     private final RecyclerView.RecycledViewPool mRecycledViewPool;
 
-    public ShanghaiElemAdapter(Context context, ArrayList<ShanghaiBean> data, boolean isHor) {
+    public ShanghaiElemAdapter(Activity context, ArrayList<ShanghaiBean> data, boolean isHor) {
         mRecycledViewPool = new RecyclerView.RecycledViewPool();
         mData = data;
         this.mContext = context;
@@ -70,7 +70,6 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
 //            ((ShanghaiViewHolder)holder).itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
-//
 //                }
 //            });
 
@@ -78,7 +77,7 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
             ((ShanghaiViewHolder) holder).itemView.setTag(position);
 
         } else if (holder instanceof ShanghaiViewHolderRv) {
-            //高级优化RecycledViewPool
+            //高级优化RecycledViewPool 写在viewHoler
 //            ((ShanghaiViewHolderRv) holder).mRecyclerView.
 //                    setLayoutManager(new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false));
             ((ShanghaiViewHolderRv) holder).mRecyclerView.setAdapter(new ShanghaiElemAdapter(mContext, shanghaiBean.getData(), true));
@@ -113,8 +112,10 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
             this.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int position = (int) v.getTag();
-                    Toast.makeText(mContext, "我被点击了+position ：" + position, Toast.LENGTH_SHORT).show();
+//                    int position = (int) v.getTag();
+//                    Toast.makeText(mContext, "我被点击了+position ：" + position, Toast.LENGTH_SHORT).show();
+                    //转场动画
+                    ShanghaiDetailActivity.start_5_0(mContext,mIv);
                 }
             });
         }
