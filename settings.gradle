@@ -1,2 +1,2 @@
-include ':mvp'
+include ':mvp', ':http', ':task'
 include ":app"

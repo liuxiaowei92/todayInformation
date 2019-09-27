@@ -35,7 +35,8 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
     implementation 'com.google.android.material:material:1.0.0'
 
-    //网络
-    implementation("com.squareup.okhttp3:okhttp:4.2.0")
+
     implementation project(path: ':mvp')
+    implementation project(path: ':http')
+    implementation project(path: ':task')
 }

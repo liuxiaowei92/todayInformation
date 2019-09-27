@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import com.study.todayinformation.R;
 import com.study.todayinformation.base.BaseActivity;
 import com.study.todayinformation.base.ViewInject;
+import com.study.todayinformation.main.shanghai.IShanghaiDetailContract;
+import com.study.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,14 +20,15 @@ import java.io.IOException;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
+import androidx.core.view.ViewCompat;
 import butterknife.BindView;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
 
 /**
  * @authour lxw
@@ -33,8 +36,9 @@ import okhttp3.Response;
  * @date 2019/9/24
  */
 @ViewInject(mainLayoutId = R.layout.activity_shanghai_detail)
-public class ShanghaiDetailActivity extends BaseActivity {
+public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDetailContract.IView {
 
+    IShanghaiDetailContract.IPresenter mPresenter=new ShanghaiDetailPresenter(this);
     public static String mActivityOptionsCompt = "ShanghaiDetailActivity";
     @BindView(R.id.iv_shanghai_detail)
     ImageView ivShanghaiDetail;
@@ -42,17 +46,49 @@ public class ShanghaiDetailActivity extends BaseActivity {
     @Override
     public void afterBindView() {
         initAnima();
-//        initGetNetData();
+        initGetNetData();
 //        initPostNetData();
+    }
 
+    //okttp请求网络
+    private void initGetNetData() {
+
+        mPresenter.getNetData();
+
+//        GetXiaoHuaTask task=new GetXiaoHuaTask();
+//        task.execute("desc","1","2");
+
+//        //1，可以隔离
+//        OkHttpClient client = new OkHttpClient();
+//        //2，传递参数  构建请求  1）url  2）参数
+//        HttpUrl.Builder builder = HttpUrl.parse("http://v.juhe.cn/joke/content/list.php").newBuilder();
+//        builder.addQueryParameter("key","value");
+//        builder.addQueryParameter("key","value");
+//        builder.addQueryParameter("key","value");
+//        //3，构建request
+//        Request request = new Request.Builder()
+//                .url(builder.build())
+//                .get()
+//                .build();
+//        //4，构建call
+//        Call call = client.newCall(request);
+//        call.enqueue(new Callback() {
+//            @Override
+//            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+//                Log.i("initGetNetData", "onFailure:" + e.toString());
+//            }
+//            @Override
+//            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+//                Log.i("initGetNetData", "onResponse=" + response.body().string());
+//            }
+//        });
     }
 
     private void initPostNetData() {
-        OkHttpClient client = new OkHttpClient();
 
+        OkHttpClient client = new OkHttpClient();
         FormBody.Builder formBody= new FormBody.Builder();
         formBody.add("key","value");
-
         Request request = new Request.Builder()
                 .url("")
                 .post(formBody.build())
@@ -63,34 +99,6 @@ public class ShanghaiDetailActivity extends BaseActivity {
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 Log.i("initGetNetData", "onFailure:" + e.toString());
             }
-
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                Log.i("initGetNetData", "onResponse=" + response.body().string());
-            }
-        });
-    }
-
-    //okttp请求网络
-    private void initGetNetData() {
-        OkHttpClient client = new OkHttpClient();
-        //传递参数
-        HttpUrl.Builder builder = HttpUrl.parse("http://baidu.com").newBuilder();
-        builder.addQueryParameter("key","value");
-        builder.addQueryParameter("key","value");
-        builder.addQueryParameter("key","value");
-
-        Request request = new Request.Builder()
-                .url(builder.build())
-                .get()
-                .build();
-        Call call = client.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                Log.i("initGetNetData", "onFailure:" + e.toString());
-            }
-
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 Log.i("initGetNetData", "onResponse=" + response.body().string());
@@ -102,7 +110,7 @@ public class ShanghaiDetailActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
             //布局文件配置后 可以去掉
-            //ViewCompat.setTransitionName(ivShanghaiDetail,mActivityOptionsCompt);
+            ViewCompat.setTransitionName(ivShanghaiDetail,mActivityOptionsCompt);
             //开启转场动画
             startPostponedEnterTransition();
         }

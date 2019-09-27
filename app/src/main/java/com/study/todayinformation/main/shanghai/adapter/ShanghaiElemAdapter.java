@@ -74,7 +74,7 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
 //            });
 
             //优化点击事件
-            ((ShanghaiViewHolder) holder).itemView.setTag(position);
+            ((ShanghaiViewHolder) holder).itemView.setTag(shanghaiBean);
 
         } else if (holder instanceof ShanghaiViewHolderRv) {
             //高级优化RecycledViewPool 写在viewHoler
@@ -112,10 +112,12 @@ public class ShanghaiElemAdapter extends RecyclerView.Adapter {
             this.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    int position = (int) v.getTag();
+                    ShanghaiBean shanghaiBean = (ShanghaiBean) v.getTag();
 //                    Toast.makeText(mContext, "我被点击了+position ：" + position, Toast.LENGTH_SHORT).show();
                     //转场动画
-                    ShanghaiDetailActivity.start_5_0(mContext,mIv);
+                    if(shanghaiBean.isShowImg()) {
+                        ShanghaiDetailActivity.start_5_0(mContext, mIv);
+                    }
                 }
             });
         }
