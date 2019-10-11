@@ -11,6 +11,7 @@ import com.study.todayinformation.R;
 import com.study.todayinformation.base.BaseActivity;
 import com.study.todayinformation.base.ViewInject;
 import com.study.todayinformation.main.shanghai.IShanghaiDetailContract;
+import com.study.todayinformation.main.shanghai.dto.ShanghaiDetailBean;
 import com.study.todayinformation.main.shanghai.presenter.ShanghaiDetailPresenter;
 
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +54,7 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
     //okttp请求网络
     private void initGetNetData() {
 
-        mPresenter.getNetData();
+        mPresenter.getNetData(2);
 
 //        GetXiaoHuaTask task=new GetXiaoHuaTask();
 //        task.execute("desc","1","2");
@@ -130,4 +131,8 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
         }
     }
 
+    @Override
+    public void showData(ShanghaiDetailBean data) {
+
+    }
 }

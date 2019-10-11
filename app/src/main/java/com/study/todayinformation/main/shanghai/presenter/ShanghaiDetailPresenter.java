@@ -1,8 +1,5 @@
 package com.study.todayinformation.main.shanghai.presenter;
 
-import android.util.Log;
-
-import com.google.gson.Gson;
 import com.study.http.result.IResult;
 import com.study.todayinformation.base.BasePresenter;
 import com.study.todayinformation.base.JHTask;
@@ -31,7 +28,7 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
      * 获取网络数据
      */
     @Override
-    public void getNetData() {
+    public void getNetData(int pageSize) {
 
         /**
          * 架构师必备条件
@@ -44,15 +41,16 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
 
             @Override
             public IResult<ShanghaiDetailBean> onBackground() {
-                return new ShanghaiDetailHttpTask<ShanghaiDetailBean>().getXiaoHuaList("desc", "1", "2");
+                return new ShanghaiDetailHttpTask<ShanghaiDetailBean>().getXiaoHuaList("desc", "1", pageSize+"");
             }
 
             @Override
             public void onSuccess(IResult<ShanghaiDetailBean> t) {
                 ShanghaiDetailBean data = t.data();
-                Gson gson=new Gson();
-                gson.toJson(data);
-                Log.e("getNetData",gson.toJson(data));
+//                Gson gson=new Gson();
+//                gson.toJson(data);
+//                Log.e("getNetData",gson.toJson(data));
+                getView().showData(data);
             }
 
             @Override
