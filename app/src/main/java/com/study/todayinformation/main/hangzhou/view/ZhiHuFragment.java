@@ -1,5 +1,7 @@
 package com.study.todayinformation.main.hangzhou.view;
 
+import android.view.animation.AnimationUtils;
+
 import com.google.android.material.appbar.AppBarLayout;
 import com.study.todayinformation.R;
 import com.study.todayinformation.base.BaseFragment;
@@ -33,6 +35,10 @@ public class ZhiHuFragment extends BaseFragment implements IShanghaiDetailContra
     public void afterBindView() {
 
         zhihuRecyclerview.setLayoutManager(new LinearLayoutManager(mContext));
+        //设置动画 补间动画：只作用在view控件上 影子在移动 原view位置不变
+//        AlphaAnimation alphaAnimation=new AlphaAnimation(0,1);
+//        zhihuRecyclerview.setAnimation(alphaAnimation);
+        zhihuRecyclerview.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.zhihu_recyclerview_show));
         mPresenter.getNetData(20);
 
     }
