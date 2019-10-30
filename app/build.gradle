@@ -39,4 +39,5 @@ dependencies {
     implementation project(path: ':mvp')
     implementation project(path: ':http')
     implementation project(path: ':task')
+    implementation project(path: ':refresh')
 }
