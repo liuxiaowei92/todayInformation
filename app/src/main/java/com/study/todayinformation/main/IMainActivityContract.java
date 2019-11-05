@@ -1,9 +1,9 @@
 package com.study.todayinformation.main;
 
 
+import com.study.annotation.MvpEmptyViewFactory;
 import com.study.mvp.ILifeCircle;
 import com.study.mvp.IMvpView;
-import com.study.mvp.MvpControler;
 
 import androidx.fragment.app.Fragment;
 
@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
  * @date 2019/9/19
  */
 public interface IMainActivityContract {
-
+    @MvpEmptyViewFactory
     interface Iview extends IMvpView {
 
         void showFragment(Fragment mFragment);
@@ -37,27 +37,27 @@ public interface IMainActivityContract {
 
     }
 
-    Iview emptyView=new Iview() {
-
-        @Override
-        public void showFragment(Fragment mFragment) {
-
-        }
-
-        @Override
-        public void addFragment(Fragment mFragment) {
-
-        }
-
-        @Override
-        public void hideFragment(Fragment mFragment) {
-
-        }
-
-        @Override
-        public MvpControler getMvpControler() {
-            return null;
-        }
-    };
+//    Iview emptyView=new Iview() {
+//
+//        @Override
+//        public void showFragment(Fragment mFragment) {
+//
+//        }
+//
+//        @Override
+//        public void addFragment(Fragment mFragment) {
+//
+//        }
+//
+//        @Override
+//        public void hideFragment(Fragment mFragment) {
+//
+//        }
+//
+//        @Override
+//        public MvpControler getMvpControler() {
+//            return null;
+//        }
+//    };
 
 }

@@ -1,11 +1,11 @@
 package com.study.todayinformation.main;
 
 import com.study.todayinformation.R;
+import com.study.todayinformation.base.BasePresenter;
 import com.study.todayinformation.main.beijing.BeijingFragment;
 import com.study.todayinformation.main.hangzhou.HangzhouFragment;
 import com.study.todayinformation.main.shanghai.ShanghaiFragment;
 import com.study.todayinformation.main.shenzhen.ShenzhenFragment;
-import com.study.mvp.base.BaseMvpPresenter;
 
 import androidx.fragment.app.Fragment;
 
@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
  * @function
  * @date 2019/9/19
  */
-public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter {
+public class MainActivityPresenter extends BasePresenter<IMainActivityContract.Iview> implements IMainActivityContract.IPresenter {
 
 
     //当前fragment角标
@@ -28,11 +28,10 @@ public class MainActivityPresenter extends BaseMvpPresenter<IMainActivityContrac
         super(view);
     }
 
-    @Override
-    protected IMainActivityContract.Iview getEmptyView() {
-        return null;
-
-    }
+//    @Override
+//    protected IMainActivityContract.Iview getEmptyView() {
+//        return null;
+//    }
 
     @Override
     public void initHomeFragment() {

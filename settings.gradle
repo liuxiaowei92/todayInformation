@@ -1,2 +1,2 @@
-include ':mvp', ':http', ':task', ':refresh'
+include ':mvp', ':http', ':task', ':refresh', ':annotation', ':apt'
 include ":app"

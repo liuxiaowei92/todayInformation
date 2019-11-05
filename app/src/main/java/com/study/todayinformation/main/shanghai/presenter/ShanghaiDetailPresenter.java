@@ -19,16 +19,16 @@ public class ShanghaiDetailPresenter extends BasePresenter<IShanghaiDetailContra
         super(view);
     }
 
-    @Override
-    protected IShanghaiDetailContract.IView getEmptyView() {
-        return null;
-    }
+//    @Override
+//    protected IShanghaiDetailContract.IView getEmptyView() {
+//        return null;
+//    }
 
     /**
      * 获取网络数据
      */
     @Override
-    public void getNetData(int pageSize) {
+    public void getNetData(final int pageSize) {
 
         /**
          * 架构师必备条件

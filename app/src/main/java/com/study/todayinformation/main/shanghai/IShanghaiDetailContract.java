@@ -1,8 +1,8 @@
 package com.study.todayinformation.main.shanghai;
 
+import com.study.annotation.MvpEmptyViewFactory;
 import com.study.mvp.ILifeCircle;
 import com.study.mvp.IMvpView;
-import com.study.mvp.MvpControler;
 import com.study.todayinformation.main.shanghai.dto.ShanghaiDetailBean;
 
 /**
@@ -11,6 +11,7 @@ import com.study.todayinformation.main.shanghai.dto.ShanghaiDetailBean;
  * @date 2019/9/26
  */
 public interface IShanghaiDetailContract {
+    @MvpEmptyViewFactory
     interface IView extends IMvpView{
 
         void showData(ShanghaiDetailBean data);
@@ -21,19 +22,19 @@ public interface IShanghaiDetailContract {
         void getNetData(int pageSize);
     }
 
-    //以后优化  ept方式
-    IShanghaiDetailContract.IView emptyView=new IShanghaiDetailContract.IView(){
-
-        @Override
-        public void showData(ShanghaiDetailBean data) {
-
-        }
-
-        @Override
-        public MvpControler getMvpControler() {
-            return null;
-        }
-    };
+//    //以后优化  ept方式
+//    IShanghaiDetailContract.IView emptyView=new IShanghaiDetailContract.IView(){
+//
+//        @Override
+//        public void showData(ShanghaiDetailBean data) {
+//
+//        }
+//
+//        @Override
+//        public MvpControler getMvpControler() {
+//            return null;
+//        }
+//    };
 
 
 
