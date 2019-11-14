@@ -6,6 +6,7 @@ import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.study.todayinformation.R;
 import com.study.todayinformation.base.BaseActivity;
@@ -43,12 +44,36 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
     public static String mActivityOptionsCompt = "ShanghaiDetailActivity";
     @BindView(R.id.iv_shanghai_detail)
     ImageView ivShanghaiDetail;
+    @BindView(R.id.tv_crash)
+    TextView mTvCrash;
 
     @Override
     public void afterBindView() {
         initAnima();
         initGetNetData();
 //        initPostNetData();
+        //手动crash
+        ivShanghaiDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //主线程崩溃
+                String s=null;
+                s.toString();
+            }
+        });
+        mTvCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //子线程崩溃
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String s=null;
+                        s.toString();
+                    }
+                }).start();
+            }
+        });
     }
 
     //okttp请求网络
@@ -135,4 +160,5 @@ public class ShanghaiDetailActivity extends BaseActivity implements IShanghaiDet
     public void showData(ShanghaiDetailBean data) {
 
     }
+
 }

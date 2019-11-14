@@ -2,6 +2,7 @@ package com.study.todayinformation.main.hangzhou.refresh;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -30,7 +31,7 @@ public class MeiTuanRefreshManager extends BaseRefreshManager {
 
     @Override
     public void downRefresh() {
-
+        Log.i("MeiTuanRefreshManager","downRefresh");
     }
     //释放刷新 变成美团小人
     @Override

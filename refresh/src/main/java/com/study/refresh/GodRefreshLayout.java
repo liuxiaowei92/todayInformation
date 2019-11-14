@@ -125,6 +125,9 @@ public class GodRefreshLayout extends LinearLayout {
                         //0~1进行变化
                         float percent=((-minHeadViewHeight)-(-topMargin))*1.0f/(-minHeadViewHeight);
                         mRefreshManager.downRefreshScale(percent);
+                    }else{
+                        //随便给的值
+                        mRefreshManager.downRefreshScale(1f);
                     }
 
 
@@ -169,7 +172,7 @@ public class GodRefreshLayout extends LinearLayout {
                 int dx = (int) (ev.getX() - interceptDownX);
                 if (Math.abs(dy) > Math.abs(dx) && dy > 0 &&handleChildViewISTop()) {
                     //说明上下滑动
-                    return true;//时间拦截
+                    return true;//事件拦截
                 }
                 break;
             case MotionEvent.ACTION_UP:

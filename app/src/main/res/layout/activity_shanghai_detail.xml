@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
     <!--android:transitionName="ShanghaiDetailActivity"-->
-<ImageView
-    android:id="@+id/iv_shanghai_detail"
-    android:scaleType="centerCrop"
-    android:src="@mipmap/shanghai"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/dp_200"/>
+    <ImageView
+        android:id="@+id/iv_shanghai_detail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/shanghai"/>
+    <TextView
+        android:id="@+id/tv_crash"
+        android:layout_width="match_parent"
+        android:text="子线程崩溃"
+        android:gravity="center"
+        android:layout_height="100dp"/>
 </LinearLayout>
