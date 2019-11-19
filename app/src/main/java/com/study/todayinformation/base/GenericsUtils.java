@@ -4,6 +4,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
+ * 获取 泛型 的class
  * Created by anson on 2018/12/29.
  */
 public class GenericsUtils {

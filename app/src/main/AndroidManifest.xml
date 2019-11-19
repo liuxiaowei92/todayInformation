@@ -23,6 +23,11 @@
         <activity android:name=".main.MainActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".main.shanghai.view.ShanghaiDetailActivity"/>
+
+        <!--播放器配置信息-->
+        <meta-data
+            android:name="playertype"
+            android:value="2"/>
     </application>
 
 </manifest>
