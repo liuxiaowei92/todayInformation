@@ -2,6 +2,9 @@
 <manifest package="com.study.todayinformation"
           xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--9.0适配-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
         android:name=".base.TodayInformationApplication"
         android:allowBackup="true"
@@ -19,10 +22,24 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--内容提供者注册-->
+        <provider
+            android:authorities="com.study.todayinformation.process.data"
+            android:name=".main.beijing.MainProcessDataProvider"/>
+        <!--服务注册-->
+        <service android:name=".main.beijing.MainProcessService"/>
         <!--防止横屏后Activity生命周期重新调用   造成fragment叠加效果-->
         <activity android:name=".main.MainActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <activity android:name=".main.shanghai.view.ShanghaiDetailActivity"/>
+                  android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <!--配置一个子进程-->
+        <activity
+            android:process=":shanghai.detail"
+            android:name=".main.shanghai.view.ShanghaiDetailActivity"/>
 
         <!--播放器配置信息-->
         <meta-data

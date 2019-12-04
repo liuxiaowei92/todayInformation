@@ -42,5 +42,6 @@ dependencies {
     implementation project(path: ':task')
     implementation project(path: ':refresh')
     implementation project(path: ':player')
+    implementation project(path: ':ipc')
 
 }
