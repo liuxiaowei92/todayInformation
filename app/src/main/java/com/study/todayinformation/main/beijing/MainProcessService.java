@@ -41,6 +41,8 @@ public class MainProcessService extends Service {
                         e.printStackTrace();
                     }
                     break;
+                    default:
+                        break;
             }
         }
     };
